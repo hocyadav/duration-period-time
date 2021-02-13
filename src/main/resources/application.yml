@@ -1,0 +1,16 @@
+config:
+  appConfig:
+    key1 : "value1"
+    key2 : "value2"
+  timeConfig: # variable name
+    time1: 100
+    time2: 100
+  timeConfigDuration: # variable name
+    time1: 60s #key and value present in single line
+    time2: 1m #key and value present in single line
+    time3: 1h #key and value present in single line
+  timeConfigDurationAdvance: # variable name
+    timeValue: # this is key, and below is value as object (DurationClass)
+      time1: 60s # telling in config file what time is this [store in Duration object]
+      time2: 1 # [1 with no unit default it treat as hr, we can use 1h, 1m, 1s] : setting as only long value and in java we can tell what this is sec/min/hr [Store in duration obj + tell config input is what]
+      time3: 10 # here no unit + in java no unit , so default is milli sec
