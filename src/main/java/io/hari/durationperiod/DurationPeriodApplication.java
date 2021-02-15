@@ -1,10 +1,12 @@
 package io.hari.durationperiod;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -88,6 +90,14 @@ public class DurationPeriodApplication implements CommandLineRunner {
         final LocalTime localTime2 = timestamp1.toLocalDateTime().toLocalTime().withSecond(0).withNano(0);//remove sec + remove mili
         System.out.println("localTime2 = " + localTime2);
 
+        //todo : Date, DateFormat , LocalDate, TimeStamp conversion
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//        LocalDateTime localDateTime3 = LocalDateTime.now();
+//        final Date parse = simpleDateFormat.parse("26/06/1989 18:11:03");
+//        System.out.println("parse = " + parse);
+//        final long time1 = parse.getTime();
+//        final Timestamp timestamp2 = new Timestamp(time1);
+//        System.out.println("timestamp2 = " + timestamp2);
     }
 
     private String getString() {
