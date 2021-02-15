@@ -1,3 +1,4 @@
+
 config:
   appConfig:
     key1 : "value1"
@@ -14,3 +15,5 @@ config:
       time1: 60s # telling in config file what time is this [store in Duration object]
       time2: 1 # [1 with no unit default it treat as hr, we can use 1h, 1m, 1s] : setting as only long value and in java we can tell what this is sec/min/hr [Store in duration obj + tell config input is what]
       time3: 10 # here no unit + in java no unit , so default is milli sec
+server:
+  port: 8081

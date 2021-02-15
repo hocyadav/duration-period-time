@@ -1,6 +1,10 @@
 package io.hari.durationperiod;
 
+import java.sql.Timestamp;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -51,6 +55,38 @@ public class DurationPeriodApplication implements CommandLineRunner {
         System.out.println(getString());
         System.out.println(getString());
         System.out.println(getString());
+
+        /** db to java time: Timestamp API**/
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println("timestamp = " + timestamp.toString());
+        long time = timestamp.getTime();//
+        System.out.println("time = " + new Timestamp(time));
+        time = time + 1 * 1000;
+        System.out.println("time = " + time);
+        System.out.println("new Timestamp(time) = " + new Timestamp(time));
+
+        /** Timestamp to localdate time**/
+        Timestamp timestamp1 = new Timestamp(System.currentTimeMillis());
+        System.out.println("timestamp1 = " + timestamp1);
+        final LocalDateTime localDateTime = timestamp1.toLocalDateTime();
+        System.out.println("localDateTime = " + localDateTime);
+        /** extract date from local date**/
+        final LocalDate localDate = timestamp1.toLocalDateTime().toLocalDate();
+        System.out.println("localDate = " + localDate);
+        /** extract time from local date**/
+        final LocalTime localTime = timestamp1.toLocalDateTime().toLocalTime();
+        System.out.println("localTime = " + localTime);
+
+        /** remove milisecond from local date time or local time**/
+        final LocalDateTime localDateTime1 = timestamp1.toLocalDateTime().withNano(0);
+        System.out.println("localDateTime1 = " + localDateTime1);
+
+        final LocalTime localTime1 = timestamp1.toLocalDateTime().toLocalTime().withNano(0);
+        System.out.println("localTime1 = " + localTime1);
+        final LocalDateTime localDateTime2 = timestamp1.toLocalDateTime().withNano(0);//remove mili
+        System.out.println("localDateTime2 = " + localDateTime2);
+        final LocalTime localTime2 = timestamp1.toLocalDateTime().toLocalTime().withSecond(0).withNano(0);//remove sec + remove mili
+        System.out.println("localTime2 = " + localTime2);
 
     }
 
