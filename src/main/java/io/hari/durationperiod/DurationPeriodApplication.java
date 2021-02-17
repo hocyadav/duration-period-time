@@ -33,6 +33,7 @@ public class DurationPeriodApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        System.out.println("DurationPeriodApplication.run");
         testDuration_n_Period_API();
 
         System.out.println("random = " + RandomStringUtils.randomAlphabetic(5));
